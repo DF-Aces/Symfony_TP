@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Details de l'annonce
+{% endblock %}
+
+{% block body %}
+    {{parent()}}
+
+    <div class="card text-center">
+        <div class="card-header">
+            {{card.title}}
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Prix:
+                {{card.price}}€</h5>
+            <p class="card-text">{{ card.content}}</p>
+            <a href="{{ path("annoncement") }}" class="btn btn-primary">Retour</a>
+        </div>
+        <div class="card-footer text-muted">
+            {{card.createdAt|date("m/d/Y")}}
+        </div>
+    </div>
+{% endblock %}
